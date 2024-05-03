@@ -18,6 +18,10 @@ public class SpinoutUtil {
     FRONT, LEFT, RIGHT, BACK, FL, FR, BL, BR
   }
 
+  public static Wheel calcWheelToLock(Translation2d fieldRelativeInputs, Rotation2d robotAngle, SpinoutDirection dir) {
+    return calcWheelToLock(fieldRelativeInputs, robotAngle, dir, 30);
+  }
+
   public static Wheel calcWheelToLock(Translation2d fieldRelativeInputs, Rotation2d robotAngle, SpinoutDirection dir, double cornerSpanDeg) {
     // get spinout "zone" based on robot relative angle
     Translation2d robotRelativeInputs = fieldRelativeInputs.rotateBy(robotAngle.unaryMinus());
